@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        '/': (context) => const tela(),
+        '/': (context) => const tela(title: 'juan'),
         // '/login': (context) => const Login(),
         // '/cadastro': (context) => const Cadastro(),
         // '/home': (context) => const Home()
