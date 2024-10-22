@@ -12,14 +12,15 @@ class tela extends StatefulWidget {
 class _telaState extends State<tela> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text(
-          widget.title,
-          textDirection: TextDirection.ltr,
-          style: TextStyle(color: Colors.white, fontSize: 25.0),
-        ),
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.red
       ),
+      home: Container(
+        child: Center(
+        child: Text('flutter'),
+      ), 
+    ),
     );
   }
 }
