@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'pages/tela.dart';
-
+import 'pages/home.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,13 +13,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.system,
       theme: ThemeData(
         useMaterial3: true,
       ),
+      initialRoute: '/',
       routes: {
-        '/': (context) => const tela(title: 'juan'),
-        // '/login': (context) => const Login(),
+        '/login': (context) => const tela(title: 'juan'),
+        '/': (context) => const Home(),
         // '/cadastro': (context) => const Cadastro(),
         // '/home': (context) => const Home()
       },
