@@ -10,17 +10,36 @@ class tela extends StatefulWidget {
 }
 
 class _telaState extends State<tela> {
+  int counter = 3;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.red
+        primarySwatch: Colors.red,
       ),
       home: Container(
         child: Center(
-        child: Text('flutter'),
-      ), 
-    ),
+          child: GestureDetector(
+            child: Text(
+              'contador ${counter}',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
+            onTap: () {
+              if (counter > 1000) {
+                counter = 0;
+                Navigator.pushNamed(context, "/");
+              }
+              setState(() {
+                counter = counter * 3;
+              });
+            },
+          ),
+        ),
+      ),
     );
   }
 }
