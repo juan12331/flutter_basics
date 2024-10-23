@@ -12,25 +12,39 @@ class _MyWidgetState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        title: Center(
+          child: Text(
+            "home page",
+             style:TextStyle(
+              fontSize: 25.5,
+              color: Colors.white
+             ) ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.plus_one),
+        onPressed: () {
+        setState(() {
+          counter++;
+        }
+        );
+      }),
+      body: Center(
         child: GestureDetector(
           child: Text(
-            'contador ->${counter}',
+            'contador ${counter}',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 15,
+              fontSize: 20,
             ),
           ),
           onTap: () {
             print('click ${counter}');
-            if (counter > 50) {
-              counter = 0;
               Navigator.pushNamed(context, "/login");
-            }
-            setState(() {
-              counter = counter + 1;
-            });
+            
           },
         ),
       ),
